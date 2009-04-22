@@ -1,3 +1,4 @@
 .vim-*
 defines.uniq
 defines
+avr.vim
