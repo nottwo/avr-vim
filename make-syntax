@@ -1,0 +1,25 @@
+#!/usr/bin/perl -w
+# vim: ft=perl
+
+use strict;
+
+while(<>) {
+    chomp;
+
+    if ( /_vect$/ ) {
+        print "syntax keyword AVR_ISR $_\n";
+    } elsif ( /([a-z]\w+)\(/ ) {
+        print "syntax keyword AVR_function $1\n";
+    } elsif ( /(\w+)/ ) {
+        print "syntax keyword AVR_define $1\n";
+    }
+
+}
+
+print <<"EOF";
+syntax keyword AVR_define _BV
+EOF
+
+print "highlight link AVR_ISR Macro\n";
+print "highlight link AVR_define Define\n";
+print "highlight link AVR_function Function\n";

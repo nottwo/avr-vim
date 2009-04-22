@@ -1,0 +1,13 @@
+#!/usr/bin/perl -lw
+# vim: ft=perl
+
+use strict;
+
+
+while(<>) {
+    chomp;
+
+    s/^.*#\s*define\s+(\w+(\s*\(.)?).*$/$1/;
+
+    print;
+}
