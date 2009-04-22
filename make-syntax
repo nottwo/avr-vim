@@ -7,17 +7,17 @@ while(<>) {
     chomp;
 
     if ( /_vect$/ ) {
-        print "syntax keyword AVR_ISR $_\n";
+        print "syn keyword AVR_ISR $_\n";
     } elsif ( /([a-z]\w+)\(/ ) {
-        print "syntax keyword AVR_function $1\n";
+        print "syn keyword AVR_function $1\n";
     } elsif ( /(\w+)/ ) {
-        print "syntax keyword AVR_define $1\n";
+        print "syn keyword AVR_define $1\n";
     }
 
 }
 
 print <<"EOF";
-syntax keyword AVR_define _BV
+syn keyword AVR_define _BV
 EOF
 
 print "highlight link AVR_ISR Macro\n";
