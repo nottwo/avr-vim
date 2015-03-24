@@ -19,15 +19,16 @@ Your color scheme will hopefully do something sensible with those, but
 you can of course customize the highlight for them yourself.
 
 ### Installation
-To use the avr.vim syntax file, put it in ~/.vim/syntax and load it with
-:source or :runtime
+This repository is a [https://github.com/tpope/vim-pathogen](Pathogen)
+bundle.  With Pathogen installed, you can easily install avr-vim:
 
-To automatically load it when editing C files, create
-~/.vim/after/syntax/c.vim with the following content:
-
-```VimL
-runtime! syntax/avr.vim
+```sh
+cd ~/.vim/bundle
+git clone git://github.com/nottwo/avr-vim.git
 ```
+
+avr-vim ships with a Vim syntax file for avr-libc, but you should
+regenerate it for the version of avr-libc you are working with.
 
 ### Known deficiencies
 Only #defines are extracted, so actual library functions such as the

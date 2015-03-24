@@ -1,0 +1,1 @@
+runtime! syntax/avr.vim

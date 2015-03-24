@@ -1,4 +1,4 @@
-INCLUDES_DIR = /usr/avr/include
+INCLUDES_DIR = /opt/local/avr/include
 
 all: defines symbols syntax
 
@@ -17,8 +17,8 @@ symbols: .vim-symbols
 syntax: .vim-syntax
 
 .vim-syntax: defines.uniq
-	./make-syntax defines.uniq | sort | uniq > avr.vim
+	./make-syntax defines.uniq | sort | uniq > syntax/avr.vim
 	@touch .vim-syntax
 
 clean:
-	rm avr.vim .vim-* defines.uniq defines
+	rm .vim-* defines.uniq defines
